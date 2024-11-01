@@ -1,0 +1,24 @@
+<?php
+/*
+
+$Revision: 102 $
+$Date: 2008-01-10 17:07:00 -0500 (Thu, 10 Jan 2008) $
+$Author: joetan54 $
+$URL: https://wordpress-reports.googlecode.com/svn/trunk/tantan-reports/wordpress-reports/widget-mostactive-control.html $
+
+*/
+?>
+Title: <input type="text" id="tantan-reports-pattern" name="tantan-reports[title]" value="<?php echo htmlspecialchars($options['title']); ?>" /><br />
+<br />
+
+URL Pattern: <input type="text" id="tantan-reports-pattern" name="tantan-reports[pattern]" value="<?php echo htmlspecialchars($options['pattern']); ?>" /><br />
+<small>Only URLs matching this pattern will be displayed.</small>
+<br>
+<br>
+
+Max Items: <input type="text" id="tantan-reports-max" name="tantan-reports[max]" size="4" value="<?php echo htmlspecialchars($options['max']); ?>" /> <br>
+<br>
+
+<small>This widget displays your most popular content. Data is retrieved from Google Analytics.</small>
+                
+<input type="hidden" name="tantan-reports-mostactive" id="tantan-reports-mostactive" value="1" />

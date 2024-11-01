@@ -1,0 +1,170 @@
+/*
+
+$Revision: 102 $
+$Date: 2008-01-10 17:07:00 -0500 (Thu, 10 Jan 2008) $
+$Author: joetan54 $
+$URL: https://wordpress-reports.googlecode.com/svn/trunk/tantan-reports/wordpress-reports/tantan_reports.css $
+
+*/
+div.donate {
+    margin:2em;
+    padding:1em;
+    border:1px solid #555;
+    background:#eee;
+}
+fieldset.graph {
+    /*float:left;*/
+}
+fieldset.graph {
+    border:1px solid #ccc;
+}    
+fieldset.graph legend {
+    font-family: Georgia,"Times New Roman",Times,serif;
+    font-size: 22px;
+}
+fieldset.graph legend a.more {
+    color:#039;
+    font-family:arial,sans-serif;
+    font-size:10px;
+    text-decoration:none;
+}
+fieldset.graphwide {
+    float:none;
+    clear:both;
+}
+body {
+    margin:0;
+    padding:0;
+}
+body, table td, table th {
+    font-family:Arial, Helvetica, sans-serif;
+}
+table thead td.label {
+    padding:0 0 5px 0;
+    font-size:0.9em;
+    color:#888;
+}
+table td div.bar {
+    position:relative;
+    background:#14568A;
+    color:white;
+    font-size:11px;
+}
+table td.change {
+    width:20px;
+    font-size:10px;
+    text-align:right;
+}
+
+table td span.plus {
+    color:green;
+}
+
+table td span.minus {
+    color:red;
+}
+table th.label {
+    font-size:12px;
+}
+
+table.vertGraph {
+    margin:0 0 10px 2%;
+    position:relative;
+    height:260px;
+    width:95%;
+}
+table.vertGraph td.col {
+    position:relative;
+    text-align:center;
+    vertical-align:bottom;
+}
+table.vertGraph td.col div.bwrap {
+    position:relative;
+    height:200px;
+    width:35;
+    margin:0 auto;
+    margin-top:5px;
+}
+table.vertGraph td.col div.bar {
+    position:absolute;
+    left:0px;
+    bottom:0px;
+    width:100%;
+    padding:5px 0 0 0 ;
+    border-right:1px solid #0D324F;
+    border-bottom:1px solid #0D324F;
+}
+
+table.horizGraph {
+    width:95%;
+    margin:0 0 10px 2%;
+    height:260px;    
+}
+fieldset.graphwide table.horizGraph {
+    height:auto;
+}
+table.horizGraph td.newVisits {
+    color:white;
+    background:rgb(109, 166, 209);
+    text-align:right;
+    border-bottom:1px solid #0D324F;
+}
+table.horizGraph td.retVisits {
+    color:white;
+    background:#14568A;
+    border-right:1px solid #0D324F;
+    border-bottom:1px solid #0D324F;
+}
+table.horizGraph tbody {
+}
+table.horizGraph tr.row td {
+    padding-bottom:10px;
+}
+table.horizGraph tr.row td div.bar {
+    background:#14568A;
+    color:white;
+    line-height:29px;
+    height:30px;
+    border-bottom:1px solid #0D324F;
+    white-space:nowrap;
+}
+
+table.horizGraph tr.row td.start {
+    width:50%;
+}
+
+table.horizGraph tr.row td.start div.bar {
+    width:100%;
+    overflow:hidden;
+    position:relative;
+}
+table.horizGraph tr.row td.start div.bar span {
+    width:100%;
+    height:100%;
+    top:0px;
+    left:5px;
+    line-height:28px;
+    display:block;
+    overflow:hidden;
+    position:absolute;
+}
+
+table.horizGraph tr.row td.end {
+    width:50%;
+    padding-right:0;
+}
+table.horizGraph tr.row td.end div.bar {
+    border-right:1px solid #0D324F;
+    padding-right:3px;
+    text-align:right;
+    min-width:50px;
+}
+table.horizGraph td span.plus, table.horizGraph td span.minus {
+    position:absolute;
+    top:0px;
+    right:-55px;
+    height:30px;
+	width:50px;
+	text-align:left;
+    
+}

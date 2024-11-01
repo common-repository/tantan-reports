@@ -1,0 +1,93 @@
+<?php
+/*
+
+$Revision: 110 $
+$Date: 2008-07-15 11:13:45 -0400 (Tue, 15 Jul 2008) $
+$Author: joetan54 $
+$URL: https://wordpress-reports.googlecode.com/svn/trunk/tantan-reports/wordpress-reports/tantan_reports.html $
+
+*/
+function printGraph($module, $mode='') {
+    echo '<iframe scrolling="no" '.
+        'class="'.$mode.'" '.
+        'src="../wp-content/plugins/tantan-reports/wordpress-reports/tantan_reports_load.php?module='.$module['module'].'&amp;report='.$module['report'].'" '.
+        'frameborder="0"></iframe>';
+}
+function printWideGraph($module) {
+    printGraph($module, 'wide');
+}
+function printWideShortGraph($module) {
+    printGraph($module, 'wide short');
+}
+?>
+
+<style type="text/css">
+div.reports iframe {
+    width:350px;
+    height:350px;
+    border:0;
+    margin:0 20px 0px 0;
+}
+div.reports iframe.wide {
+    display:block;
+    width:97%;
+    height:150px;
+    clear:both;
+}
+div.reports iframe.short {
+    height:3em;
+}
+</style>
+
+<div class="wrap reports">
+<h2>7 Day Traffic Summary</h2>
+
+<?php
+if (is_array($modules)) foreach ($modules as $module) {
+    switch ($module['module']) {
+        case 'feedburner':
+            printGraph($module);
+        break;
+        case 'analytics':
+            switch ($module['report']) {
+                case '7dayreport':
+                    printWideShortGraph($module);
+                break;
+                case 'newreturn':
+                    printWideGraph($module);
+                break;
+                default:
+                    printGraph($module);
+                break;
+            }
+        break;
+    }
+}
+?>
+<br clear="all"/>
+
+<div class="donate">
+If you find this plugin helpful, please consider donating a few dollars to help support this plugin's development. Thanks!
+<form action="https://www.paypal.com/cgi-bin/webscr" method="post">
+<input type="hidden" name="cmd" value="_donations" />
+<input type="hidden" name="business" value="joetan54@gmail.com" />
+<input type="hidden" name="item_name" value="TanTanNoodles Plugin Donation" />
+<input type="hidden" name="item_number" value="WordPress Reports" />
+<input type="hidden" name="page_style" value="Primary" />
+
+<input type="hidden" name="no_shipping" value="1" />
+<input type="hidden" name="return" value="http://tantannoodles.com/donation-thankyou/" />
+<input type="hidden" name="cancel_return" value="http://tantannoodles.com/" />
+<input type="hidden" name="currency_code" value="USD" />
+<input type="hidden" name="tax" value="0" />
+<input type="hidden" name="cn" value="Message / Note" />
+<input type="hidden" name="lc" value="US" />
+<input type="hidden" name="bn" value="PP-DonationsBF" />
+Amount: $<input type="text" name="amount" value="" style="width:50px;" /> <br />
+<input type="image" src="https://www.paypal.com/en_US/i/btn/x-click-butcc-donate.gif" border="0" name="submit" alt="Make payments with PayPal - it's fast, free and secure!" />
+<br />
+<img alt="" border="0" src="https://www.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1" style="clear:both;" />
+</form>
+</div>
+
+</div> <!-- wrap -->

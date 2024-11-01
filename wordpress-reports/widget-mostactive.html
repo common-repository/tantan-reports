@@ -1,0 +1,32 @@
+<?php
+/*
+To customize this template, just copy this file to your templates directory,
+name it as "wordpress-reports-widget-mostactive.html" and then modify the HTML.
+
+$Revision: 102 $
+$Date: 2008-01-10 17:07:00 -0500 (Thu, 10 Jan 2008) $
+$Author: joetan54 $
+$URL: https://wordpress-reports.googlecode.com/svn/trunk/tantan-reports/wordpress-reports/widget-mostactive.html $
+
+*/
+?>
+<?php echo $before_widget . $before_title . $title . $after_title ?>
+<ul class="posts mostactive">
+<?php 
+$i = 0;
+if (is_array($popular['Table']['records'])) foreach($popular['Table']['records'] as $content) :
+$url = $content['URL'];
+if (ereg($pattern, $url)):
+    $pid = (int) url_to_postid(ereg_replace($pattern, "\\1", $url));
+    if ($pid > 0):
+?>
+    <li><a href="<?php echo get_permalink($pid);?>"><?php echo get_the_title($pid);?></a></li>
+<?php if (($i++) >= $max) break; ?>
+<?php
+    endif;
+endif;
+endforeach;
+?>
+
+</ul>
+<?php echo $after_widget; ?>
